@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+
+  function genScore(name, kor, eng, math){
+    const obj = new Object();
+    obj.name = name;
+    obj.kor = kor;
+    obj.eng = eng;
+    obj.math = math;
+    obj.total = function () {
+      return this.kor + this.eng + this.math;
+    }
+    obj.aver = function () {
+      return (this.kor + this.eng + this.math)/3;
+    }
+
+    return obj;
+
+  }
+  let a = [];
+
+  a[0] = genScore("이명박", 100, 90, 100);
+  a[1] = genScore("박근헤", 70, 80, 100);
+  a[2] = genScore("김영삼", 100, 40, 80);
+
+
+
+  for (var score of a) {
+      console.log(score.name, score.kor, score.eng, score.math,
+              score.total(), score.aver());
+  }
+
+  a[1].kor = 100;
+console.log(a[1]);
+
+
+    </script>
+
+  </body>
+</html>
